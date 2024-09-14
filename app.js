@@ -78,11 +78,11 @@ function visualize() {
 
     analyzer.getByteTimeDomainData(dataArray);
 
-    canvasCtx.fillStyle = "rgb(0, 0, 0)";
+    canvasCtx.fillStyle = "black";
     canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
-    canvasCtx.lineWidth = 2;
-    canvasCtx.strokeStyle = "rgb(0, 255, 0)";
+    canvasCtx.lineWidth = 5;
+    canvasCtx.strokeStyle = "blue";
 
     canvasCtx.beginPath();
     const sliceWidth = (canvas.width * 1.0) / dataArray.length;
