@@ -4,7 +4,6 @@ const audioFileInput = document.getElementById("audioFile");
 const playButton = document.getElementById("playButton");
 const pauseButton = document.getElementById("pauseButton");
 
-// Set the canvas size
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -44,11 +43,9 @@ function playAudio() {
   if (!audioBuffer) return;
 
   if (isPlaying) {
-    // Stop any previous source to avoid overlap
     source.stop();
   }
 
-  // Create a new audio source and connect it
   source = audioContext.createBufferSource();
   source.buffer = audioBuffer;
 
@@ -63,7 +60,6 @@ function playAudio() {
   source.start();
   isPlaying = true;
 
-  // Start the visualization
   visualize();
 }
 
@@ -76,7 +72,7 @@ function pauseAudio() {
 
 function visualize() {
   function draw() {
-    if (!isPlaying) return; // Stop drawing if audio is paused
+    if (!isPlaying) return;
 
     requestAnimationFrame(draw);
 
